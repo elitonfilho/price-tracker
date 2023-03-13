@@ -1,4 +1,8 @@
 {
   "name": "price-tracker",
-  "packageManager": "yarn@3.4.1"
+  "packageManager": "yarn@3.4.1",
+  "type": "module",
+  "dependencies": {
+    "axios": "^1.3.4"
+  }
 }

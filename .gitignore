@@ -1,0 +1,11 @@
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# Zero-install disabled: https://yarnpkg.com/features/zero-installs
+# To enable it, swap comments
+#!.yarn/cache
+.pnp.*

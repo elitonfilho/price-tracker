@@ -4,4 +4,6 @@ class WatcherController {
     private getStrategies():  {
         return
     }
+
+    private runStrategies() {}
 }

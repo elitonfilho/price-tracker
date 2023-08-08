@@ -1,9 +1,10 @@
-import { FactoryInterface } from "../interfaces/factoryInterface";
-import { BaseRequestStrategy } from "../strategies/baseRequestStrategy";
-import { BaseAPIStrategy } from "../strategies/baseAPIStrategy";
+import { FactoryInterface } from "../interfaces/factoryInterface.js";
+import { BaseRequestStrategy } from "../strategies/baseRequestStrategy.js";
 
+
+// TODO: implement BasicAPStrategy
 export class StrategyFactory implements FactoryInterface {
-    strategies: (BaseRequestStrategy | BaseAPIStrategy)[];
+    strategies: (BaseRequestStrategy)[];
     activeStrategies: string
     /**
      * createStrategies
@@ -16,7 +17,7 @@ export class StrategyFactory implements FactoryInterface {
     }
 
     
-    public get getStrategies() : Array<BaseRequestStrategy | BaseAPIStrategy> {
+    public get getStrategies() : Array<BaseRequestStrategy> {
         return this.strategies
     }
     

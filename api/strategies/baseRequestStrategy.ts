@@ -1,11 +1,11 @@
-import axios, { AxiosResponse } from 'axios'
-import { BaseRequestInterface } from "../interfaces/baseRequestInterface";
+import axios, { AxiosRequestConfig, AxiosPromise, AxiosResponse } from 'axios';
+import { BaseRequestInterface } from "../interfaces/baseRequestInterface.js";
 
 export class BaseRequestStrategy implements BaseRequestInterface {
 
     defaultRegex: RegExp
 
-    constructor(regexString: string){
+    constructor(regexString: string = ''){
         this.defaultRegex = RegExp(regexString)
     }
 
@@ -23,9 +23,9 @@ export class BaseRequestStrategy implements BaseRequestInterface {
         }
     }
 
-    getRegexMatch(pageData: string, regexExp: RegExp): string | null {
-        const match =  pageData.match(regexExp ? regexExp : this.defaultRegex)
-        return match ? match[0] : null
+    getRegexMatch(pageData: string, regexExp: RegExp | string = ''): RegExpMatchArray {
+        const match =  pageData.match(regexExp || this.defaultRegex)
+        return match
     }
 }
 

@@ -1,9 +1,4 @@
-import { StrategyFactory } from "../../factories/strategyFactory";
+import { StrategyFactory } from "../../factories/strategyFactory.js";
 
 class WatcherController {
-    private getStrategies():  {
-        return
-    }
-
-    private runStrategies() {}
 }

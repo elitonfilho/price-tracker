@@ -1,11 +1,15 @@
 {
   "name": "price-tracker",
-  "packageManager": "yarn@3.4.1",
+  "packageManager": "yarn@3.6.1",
+  "main": "index.js",
   "type": "module",
+  "scripts": {
+    "start": "tsc && index.js"
+  },
   "dependencies": {
     "axios": "^1.4.0"
   },
   "devDependencies": {
-    "typescript": "^5.0.4"
+    "typescript": "^5.1.6"
   }
 }

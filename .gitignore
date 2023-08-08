@@ -9,3 +9,5 @@
 # To enable it, swap comments
 #!.yarn/cache
 .pnp.*
+
+dist/

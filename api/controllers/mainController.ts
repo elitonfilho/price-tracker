@@ -1,7 +1,7 @@
-import { StrategyFactory } from "../factories/strategyFactory";
-import { DatabaseSingleton } from "../singletons/db/databaseSingleton";
+import { StrategyFactory } from "../factories/strategyFactory.js";
+import { DatabaseSingleton } from "../singletons/db/databaseSingleton.js";
 
-class MainController {
+export class MainController {
     strategies: StrategyFactory;
     db: DatabaseSingleton;
     
@@ -10,14 +10,18 @@ class MainController {
         this.db = new DatabaseSingleton()
     }
 
-    main(){
+    async main(){
         // Fetch data compatible for that strategy
-        let toFetch = this.db.getSearchObjects()
+        let toFetch = this.db.getSearchObjects() // TODO: filter from strategy ?
         
         // TODO: pass data / strategy to watcher -> watcher will call strategy ?
 
-        for (let strat of this.strategies.getStrategies){
-            strat.getPage(toFetch)
+        for (const strat of this.strategies.getStrategies){
+            for (const {url} of toFetch){
+                const page = await strat.getPage(url)
+                const match = strat.getRegexMatch(page, '')
+                console.log(match)
+            }
         }
         // Launch strategy
         // Store results / launch effects
